@@ -40,7 +40,7 @@ Resources:
           sudo apt-get install apache2 -y
           sudo systemctl start apache2.service          
       ImageId: ami-090717c950a5c34d3
-      #KeyName: that-one
+      KeyName: session3
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.medium
