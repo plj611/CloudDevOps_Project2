@@ -8,6 +8,22 @@ Parameters:
         Type: String
 Resources:
 
+  UdacityS3ReadOnlyEC2: 
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+#                - ec2.amazonaws.com
+				        - s3.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+
   WebServerSecGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
