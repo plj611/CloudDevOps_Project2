@@ -18,11 +18,17 @@ Resources:
             Principal:
               Service:
 #                - ec2.amazonaws.com
-				        - s3.amazonaws.com
+                - ec2.amazonaws.com
             Action:
               - 'sts:AssumeRole'
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+
+  ServerInstanceProfile: 
+    Type: "AWS::IAM::InstanceProfile"
+    Properties: 
+      Roles: 
+        - !Ref UdacityS3ReadOnlyEC2
 
   WebServerSecGroup:
     Type: AWS::EC2::SecurityGroup
@@ -60,6 +66,7 @@ Resources:
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.medium
+      IamInstanceProfile: !Ref ServerInstanceProfile
       BlockDeviceMappings:
       - DeviceName: "/dev/sda1"
         Ebs:
@@ -73,7 +80,7 @@ Resources:
           !Sub "${EnvironmentName}-PUB-NETS"
       LaunchConfigurationName:
         Ref: WebAppLaunchConfig
-      MinSize: '2'
-      MaxSize: '4'
+      MinSize: '1'
+      MaxSize: '1'
 #      TargetGroupARNs:
 #        - Ref: WebAppTargetGroup
