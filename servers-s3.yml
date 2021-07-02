@@ -81,10 +81,26 @@ Resources:
     Properties:
       VPCZoneIdentifier:
       - Fn::ImportValue: 
-          !Sub "${EnvironmentName}-PUB-NETS"
+          !Sub "${EnvironmentName}-PRIV-NETS"
       LaunchConfigurationName:
         Ref: WebAppLaunchConfig
       MinSize: '1'
       MaxSize: '1'
 #      TargetGroupARNs:
 #        - Ref: WebAppTargetGroup
+
+  JumpBoxInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-090717c950a5c34d3
+      SecurityGroupIds:
+      - Ref: WebServerSecGroup
+      KeyName: session3
+      BlockDeviceMappings:
+      - DeviceName: "/dev/sda1"
+        Ebs:
+          VolumeSize: '10'
+      SubnetId:
+        Fn::ImportValue:
+          !Sub ${EnvironmentName}-PUB1-SN
