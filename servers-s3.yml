@@ -170,3 +170,11 @@ Resources:
       SubnetId:
         Fn::ImportValue:
           !Sub ${EnvironmentName}-PUB1-SN
+
+Outputs:
+
+    ApplicationLoadBalancerDNSName:
+      Description: The DNSName of the application load balancer
+      Value: !Join ["://", ["http",  !GetAtt WebAppLB.DNSName]]
+      Export:
+        Name: !Sub ${EnvironmentName}-APPLB-DNS
