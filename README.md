@@ -19,16 +19,17 @@ The following resources are required for deploying Udagram
 #### Steps
 
 1. git clone this repository
+
 2. cd c3
+
 3. ./create.sh <network stack name> network-s3.yml parameters-s3.json
+
 4. ./create.sh <server stack name> servers-s3.yml parameters-s3.json
 
-```
-1. The AWS region that the infrastructure deploy is in us-west-2
-2. When creating the infrastructure in step 4, you should allow step 3 to finish before  executing it. The status of the execution can be viewed in CloudFormation section in the AWS management console
-```
+   - The AWS region that the infrastructure deploy is in us-west-2
+   - When creating the infrastructure in step 4, you should allow step 3 to finish before  executing it. The status of the execution can be viewed in CloudFormation section in the AWS management console
 
-
+   
 
 ## Result
 
