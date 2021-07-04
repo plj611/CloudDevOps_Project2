@@ -4,7 +4,7 @@ This is an instagram clone called Udagram. Udagram developers can push the lates
 
 ## Infrastructure diagram
 
-![Udagram infrastructure](/home/phm/udacity/c3/Udagram infrastructure.png)
+![Udagram infrastructure](./Udagram infrastructure.png)
 
 ## Deployment
 
@@ -35,7 +35,7 @@ The public URL of Udagram is located in the output section of the server stack i
 
 The following will display if the deployment is successful
 
-![](/home/phm/udacity/c3/Udagram.png)
+![](./Udagram.png)
 
 
 
