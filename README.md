@@ -4,7 +4,7 @@ This is an instagram clone called Udagram. Udagram developers can push the lates
 
 ## Infrastructure diagram
 
-![](./Udagram infrastructure.png)
+![](./'Udagram infrastructure.png')
 
 ## Deployment
 
