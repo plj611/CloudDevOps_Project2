@@ -28,7 +28,8 @@ The following resources are required for deploying Udagram
 
    - The AWS region that the infrastructure deploy is in us-west-2
    - When creating the infrastructure in step 4, you should allow step 3 to finish before  executing it. The status of the execution can be viewed in CloudFormation section in the AWS management console
-
+   - You can use update.sh to update the CloudFormation stack
+   
    
 
 ## Result
