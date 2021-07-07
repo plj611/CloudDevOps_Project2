@@ -66,7 +66,7 @@ Resources:
           unzip -o udacity.zip
           systemctl start apache2.service
       ImageId: ami-090717c950a5c34d3
-      KeyName: session3
+      KeyName: fd310b7
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.medium
@@ -162,7 +162,7 @@ Resources:
       ImageId: ami-090717c950a5c34d3
       SecurityGroupIds:
       - Ref: WebServerSecGroup
-      KeyName: session3
+      KeyName: fd310b7 
       BlockDeviceMappings:
       - DeviceName: "/dev/sda1"
         Ebs:
