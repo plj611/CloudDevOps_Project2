@@ -22,15 +22,20 @@ The following resources are required for deploying Udagram
 
 2. cd c3
 
-3. ./create.sh "network stack name" network-s3.yml parameters-s3.json
+3. ./createkey.sh
 
-4. ./create.sh "server stack name" servers-s3.yml parameters-s3.json
+4. ./create.sh "network stack name" network-s3.yml parameters-s3.json
+
+5. ./create.sh "server stack name" servers-s3.yml parameters-s3.json
 
    - The AWS region that the infrastructure deploy is in us-west-2
-   - You may need to chmod 700 create.sh update.sh to run step 3 and step 4
+   - You may need to chmod 700 create.sh update.sh createkey.sh to run step 3 and step 4 and step 5
    - When creating the infrastructure in step 4, you should allow step 3 to finish before  executing it. The status of the execution can be viewed in CloudFormation section in the AWS management console
+   - Step 3 is used to create the key pair to logon to the servers. The key file is fd310b7.pem
+   - To logon to the servers in private subnets, you have to logon to the JumpBox first
+   - To logon to the JumpBox, you may need to chmod 400 fd310b7.pem. Then ssh ubuntu@ip.of.jumpbox -i fd310b7.pem. After you logon to JumpBox, you need to copy fd310b7.pem into the JumpBox and use the same procedure to logon to the other servers in private subnets
    - You can use update.sh to update the CloudFormation stack
-   
+
    
 
 ## Result
