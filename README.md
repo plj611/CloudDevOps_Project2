@@ -22,11 +22,12 @@ The following resources are required for deploying Udagram
 
 2. cd c3
 
-3. ./create.sh <network stack name> network-s3.yml parameters-s3.json
+3. ./create.sh "network stack name" network-s3.yml parameters-s3.json
 
-4. ./create.sh <server stack name> servers-s3.yml parameters-s3.json
+4. ./create.sh "server stack name" servers-s3.yml parameters-s3.json
 
    - The AWS region that the infrastructure deploy is in us-west-2
+   - You may need to chmod 700 create.sh update.sh to run step 3 and step 4
    - When creating the infrastructure in step 4, you should allow step 3 to finish before  executing it. The status of the execution can be viewed in CloudFormation section in the AWS management console
    - You can use update.sh to update the CloudFormation stack
    
